@@ -6,13 +6,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var crimeCollection = require('./routes/crimeCollection');
+var crimeCollection = require('./routes/api');
 
 var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://admin:admin@cluster0-eonhb.mongodb.net/mongoTest?retryWrites=true';
+var mongoDB = 'mongodb+srv://Admin:test4321@cluster0-3fq3b.mongodb.net/test?retryWrites=true';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

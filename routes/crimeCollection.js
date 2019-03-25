@@ -3500,4 +3500,30 @@ router.get('/', (req, res)=> {
 
 });
 
+
+router.get('/crimeID/:id',(req,res)=>
+{
+   crimeCollection.find(
+       {
+           crime:
+               {
+                 location:
+                     {
+                         street:
+                             {
+                                 id:req.params.id
+                             }
+                     }
+               }
+
+},(err,results)=>
+   {
+       if (err) res.send(err);
+
+       else res.send(results)
+
+
+   });
+});
+
 module.exports = router;
